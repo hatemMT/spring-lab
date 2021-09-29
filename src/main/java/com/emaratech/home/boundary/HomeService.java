@@ -1,8 +1,9 @@
-package com.emaratech.home.entity;
+package com.emaratech.home.boundary;
 
 import com.emaratech.home.control.HomeRepository;
 
 public class HomeService {
+
     private HomeRepository homeRepo;
 
     public HomeService(HomeRepository homeRepo) {
