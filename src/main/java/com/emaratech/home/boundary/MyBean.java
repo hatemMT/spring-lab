@@ -1,15 +1,18 @@
 package com.emaratech.home.boundary;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.emaratech.kafka.AppKafkaProducer;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MyBean {
-    @Value("${emaratech.greeting}")
-    String propertyValue;
+    private AppKafkaProducer kafkaProducer;
 
-    public String loadProperty() {
-        return propertyValue;
+    public MyBean(AppKafkaProducer kafkaProducer) {
+        this.kafkaProducer = kafkaProducer;
+    }
+
+    public void produceToKafka() {
+        kafkaProducer.produce("data");
     }
 
 

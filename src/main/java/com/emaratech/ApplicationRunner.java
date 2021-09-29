@@ -8,7 +8,6 @@ public class ApplicationRunner {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MyBean myBean = applicationContext.getBean(MyBean.class);
-        String s = myBean.loadProperty();
-        System.out.println(s);
+        myBean.produceToKafka();
     }
 }
