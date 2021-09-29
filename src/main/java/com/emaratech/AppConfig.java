@@ -9,6 +9,7 @@ import org.springframework.context.annotation.*;
 @ComponentScan(basePackages = {"com.emaratech"})
 @Configuration
 @Import(HomeConfig.class)
+@EnableAspectJAutoProxy
 public class AppConfig {
 
     @Bean
